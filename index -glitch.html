@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paseo Virtual por ASSIST CARD </title>
+    <meta name="description" content="Tour Virtual ASSIST CARD">
+     <link rel="icon" type="image/png" href="favicon.ico" sizes="64x64">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script src="aframe.min.js"></script>
+    <script src="aframe-animation-component.min.js"></script>
+    <script src="aframe-event-set-component.min.js"></script>
+    <script src="aframe-layout-component.min.js"></script>
+    <script src="aframe-template-component.min.js"></script> 
+    <script src="scripts.js"></script> 
+   
+  </head>
+  <body>
+    
+    <a-scene >
+      <a-assets>
+        <audio id="music" response-type="arraybuffer" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcorporate-sounds.mp3?v=1623508478609"></audio>
+
+        <!--AUDIO click-->
+        <audio id="click-sound" response-type="arraybuffer" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fclick.ogg?v=1623508477786"></audio>
+        <!--mmusica escena 1-->
+        <!--AUDIO-->
+  
+        <!--ELEMENTOS DE ENTRADA  -->
+        <!--comienzo de presentacion-->
+        <img id="elem-start" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fportada.png?v=1623508479847" crossorigin="anonymous">
+        <!--flecha-->
+        <img id="elem-arrow" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Farrow.png?v=1623508477786" crossorigin="anonymous">
+        <!--btn start-->
+        <img id="elem-start-btn" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fportadabtn.png?v=1623508480259" crossorigin="anonymous">
+
+
+        <!--ELEMENTOS DE ENTRADA  -->
+
+
+        <!--THUMBS-->
+        <img id="piso-10-thumb" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fpiso10.png?v=1623508479242">
+
+        <img id="piso-11-thumb" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fpiso11.png?v=1623508479476">
+      
+        <img id="portal-thumb" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fflecha.png?v=1623508477786">
+
+        <img id="info-point" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Finfo-tooltip.png?v=1623508477786">
+
+
+        <img id="info-sector" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Finfosector.png?v=1623508477786">
+
+        <img id="tooltip-bg" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftooltip-bg.png?v=1623508478463">
+
+       
+        <!--THUMBS-->
+        
+        <!--TEXTOS-->
+        <img id="text-recepcion"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-recepcion.png?v=1623508477785">
+
+        <img id="text-mkt"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-mkt.png?v=1623508477785">
+
+        <img id="text-it1" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-it1.png?v=1623508478440">
+
+        <img id="text-comercial" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-comercial.png?v=1623508478390">
+
+        <img id="text-planif-comercial" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-planif-comercial.png?v=1623508477785">
+
+        <img id="text-dto-medico" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-dto-medico.png?v=1623508478414">
+
+        <img id="text-asist-reint" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-asist-reint.png?v=1623508477786">
+
+        <img id="text-rrhh" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-rrhh.png?v=1623508477785">
+
+        <img id="text-legales" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-legales.png?v=1623508477785">
+
+        <img id="text-administracion" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-admin.png?v=1623508477786">
+
+        <img id="text-it2" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-it2.png?v=1623508477785">
+
+        <img id="text-telemkt" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-telemkt.png?v=1623508477785">
+
+        <img id="text-lobby" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftext-lobby.png?v=1623508477785">
+
+        <img id="ceo"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fceo.png?v=1623508478494">
+        <img id="cso"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcso.png?v=1623508479120">
+        <img id="clo"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fclo.png?v=1623508478674">
+        <img id="cio"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcio.png?v=1623508478650">
+        <img id="cfo"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcfo.png?v=1623508478531">
+        <img id="coo"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcoo.png?v=1623508479075">
+        <!--TEXTOS-->
+
+        <!-- FONDOS -->
+        <img id="startbg"  crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fwelcome.jpg?v=1623508481239">
+
+        <img id="welcome" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fwelcome.jpg?v=1623508481239">
+
+        <img id="telemarketing"  crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Ftelemarketing.jpg?v=1623508492941">
+
+        <img id="it1" crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2FIT1.jpg?v=1623508491600">
+
+        <img id="pasillopiso10" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fpasillopiso10.jpg?v=1623508492681">
+
+        <img id="comedor1" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcomedor-1.jpg?v=1623508482311">
+
+        <img id="comedor2" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcomedor-2.jpg?v=1623508484351">
+
+        <img id="gerenadmin" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fgerencias-Administracion.jpg?v=1623508484491">
+
+        <img id="reintegrosasistencias" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Freintegros-asistencias.jpg?v=1623508497768">
+
+        <img id="dtomedico" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fdto-Medico.jpg?v=1623508488992">
+
+        <img id="comercial" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcomercial.jpg?v=1623508493066">
+
+        <img id="piso11" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fpiso-11.jpg?v=1623508488910">
+
+        <img id="lobby"  crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Flobby.jpg?v=1623508496905">
+
+        <img id="rrhh"  crossorigin="anonymous" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Frrhh.jpg?v=1623508492005">
+
+        <img id="legales" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Flegales.jpg?v=1623508486240">
+
+        <img id="administracion" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fadministracion.jpg?v=1623508484886">
+
+        <img id="marketing" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fmarketing.jpg?v=1623508498316">
+
+        <img id="it2" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2FIT2.jpg?v=1623508496170">
+          
+        <img id="pasillopiso11" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fpasillos.jpg?v=1623508490031">
+
+        <img id="pasillopiso11-2" crossorigin="anonymous"  src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fpasillo11-2.jpg?v=1623508500086">
+
+        <img id="cursor" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcursor.png?v=1623508477786" crossorigin="anonymous">
+        <img id="cursor-hover" src="https://cdn.glitch.com/1df6caaa-0e31-4323-8883-fa3c175b7ef2%2Fcursor-hover.png?v=1623508477786" crossorigin="anonymous">
+        <!-- FONDOS -->
+
+        <!-- Image link template to be reused. -->
+        <script id="portal" type="text/html">
+          <a-animation attribute="scale" to="0.91 0.91 0.91" direction="alternate" dur="800" repeat="indefinite"></a-animation>
+          <a-image
+            portal
+            geometry="primitive: plane; height: 0.70; width: 0.70"
+            material="shader: flat;transparent:true; src: ${thumb};"
+            event-set__1="_event: mousedown; scale: 0.70 0.70 0.60"
+            event-set__2="_event: mouseup; scale: 1 1 1"
+            event-set__3="_event: mouseenter; scale: 1 1 1"
+            event-set__4="_event: mouseleave; scale: 0.70 0.70 0.60"
+            set-image="on: click; target: #image-a; src: ${src}"></image>
+        </script>
+        <script id="link" type="text/html">
+          <a-image
+            clickable portal
+            geometry="primitive: plane; height: .8; width: .8"
+            material="shader: flat;transparent:true; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.5 1.5 1"
+            event-set__3="_event: mouseenter; scale: 1.5 1.5 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-a; src: ${src}"></image>
+        </script>
+
+         <a-mixin id="text" text="align: left; width: 1.5;line-height:54;letter-spacing: 4;anchor: center;"></a-mixin>
+      </a-assets>
+
+      <!-- MUSICA AMBIENTAL -->
+    
+      <a-entity sound="src:#music; volume:0.5; loop: true; autoplay: false; poolSize:5.9" id="functional-music"></a-entity>
+    <!--PANEL DE LINKS DEL SUELO-->
+      <a-entity id="floor" layout="type: line; margin: 1" position="-.8 -3 -.5" rotation="-90 0 0">
+        <a-entity class="portalawelcome floor" template="src: #link" data-src="#welcome" data-thumb="#piso-10-thumb" visible="false"></a-entity> 
+        <a-entity class="portalalobby floor" template="src: #link" data-src="#lobby" data-thumb="#piso-11-thumb" visible="false"></a-entity>
+      </a-entity>
+      <!--PANEL DE LINKS DEL SUELO-->
+      
+      <!-- PORTALES -->
+    <a-entity sound="on: click; src: #click-sound;autoplay: false" >
+      <!-- portal RECEPCION-TELEMARKETING entrando por la DERECHA -->
+        <a-entity template="src:#portal" position="5 0.9 0.7" visible="false" rotation="0 -90 0" class="portales pantalla-welcome portalatelemkt" data-src="#telemarketing" data-thumb="#portal-thumb" ></a-entity>
+      
+        <!-- portal RECEPCION-ASISTENCIAS entrando por la IZQUIERDA-->
+        <a-entity template="src:#portal" position="-5 0.9 1.5" visible="false" rotation="0 90 0" class="portales pantalla-welcome portalareintegrosasis" data-src="#reintegrosasistencias" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal RECEPCION-PISO11 entrando por la ATRAS-->
+        <a-entity rotate-bg template="src:#portal" position="0.3 0 7" visible="false" rotation="0 180 0" class="portales pantalla-welcome portalalobby" data-src="#lobby" data-thumb="#portal-thumb"></a-entity>
+
+       <!-- portal TELEMARKETING-RECEPCION-->
+        <a-entity template="src:#portal" class="portales pantalla-telemarketing portalawelcome" visible="false" data-src="#welcome" data-thumb="#portal-thumb" position="9 0.6 -0.7"  rotation="0 -90 0"></a-entity>
+
+        <!-- portal TELEMARKETING-IT1-->
+        <a-entity template="src:#portal" class="portales pantalla-telemarketing portalait1" visible="false" data-src="#it1" data-thumb="#portal-thumb" position="-0.317 0.122 -9"  ></a-entity>
+
+        <!-- portal IT1- PASILLOS-->
+        <a-entity template="src:#portal" class="portales pantalla-it1 portalapasillopiso10" visible="false" data-src="#pasillopiso10" data-thumb="#portal-thumb" position="-8 0.2 0.4"  rotation="0 90 0"></a-entity>
+
+        <!-- portal IT1- TLMKT-->
+        <a-entity template="src:#portal" class="portales pantalla-it1 portalatelemkt" visible="false" data-src="#telemarketing" data-thumb="#portal-thumb" position="9 0.2 -0.5"  rotation="0 -90 0"></a-entity>
+
+        <!-- portal PASILLO PISO 10- IT1-->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso10 portalait1" visible="false" data-src="#it1" data-thumb="#portal-thumb" position="9 -0.3 -0.8" rotation="0 -90 0"></a-entity>
+
+        <!-- portal PASILLO PISO 10- GERENADMIN-->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso10 portalagerenadmin" visible="false" data-src="#gerenadmin" data-thumb="#portal-thumb" position="-0.6 -0.2 -8"  ></a-entity>
+
+        <!-- portal PASILLO PISO 10- COMEDOR1-->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso10 portalacomedor1" visible="false" data-src="#comedor1" data-thumb="#portal-thumb" position="0 -0.3 8" rotation="0 180 0" ></a-entity>
+
+        <!-- portal COMEDOR 1- COMEDOR 2-->
+        <a-entity template="src:#portal" class="portales pantalla-comedor1 portalacomedor2" visible="false" data-src="#comedor2" data-thumb="#portal-thumb" position="-0.1 -0.3 -8"  ></a-entity>
+
+        <!-- portal COMEDOR 2- PASILLO 10-->
+        <a-entity template="src:#portal" class="portales pantalla-comedor2 portalapasillopiso10" visible="false" data-src="#pasillopiso10" data-thumb="#portal-thumb" position="-8 -0.2 -4" rotation="0 40 0" ></a-entity>
+
+        <!-- portal  GERENADMIN - PASILLOPISO!10-->
+        <a-entity template="src:#portal" class="portales pantalla-gerenadmin portalapasillopiso10" visible="false" data-src="#pasillopiso10" data-thumb="#portal-thumb" position="-8 0.4 1.5" rotation="0 100 0"  ></a-entity>
+
+        <!-- portal GERENADMIN COMERCIAL-->
+        <a-entity template="src:#portal" class="portales pantalla-gerenadmin portalacomercial" visible="false" data-src="#comercial" data-thumb="#portal-thumb" position="8 0.4 -3" rotation="0 -70 0" ></a-entity>
+
+        <!-- portal GERENADMIN PISO11-->
+        <a-entity rotate-bg template="src:#portal" class="portales pantalla-gerenadmin portalalobby" visible="false" data-src="#lobby" data-thumb="#portal-thumb" position="2.6 1.5 6" rotation="0 190 0" ></a-entity>
+
+        <!-- portal  COMERCIAL GERENADMIN-->
+        <a-entity template="src:#portal" class="portales pantalla-comercial portalagerenadmin" visible="false" data-src="#gerenadmin" data-thumb="#portal-thumb" position="9 -0.3 -0.8" rotation="0 -90 0" ></a-entity>
+
+        <!-- portal  COMERCIAL DTOMEDICO-->
+        <a-entity template="src:#portal" class="portales pantalla-comercial portaladtomedico" visible="false" data-src="#dtomedico" data-thumb="#portal-thumb" position="-0.4 -0.3 -9"   ></a-entity>
+
+         <!-- portal  DTOMEDICO COMERCIAL-->
+        <a-entity template="src:#portal" class="portales pantalla-dtomedico portalacomercial" visible="false" data-src="#comercial" data-thumb="#portal-thumb" position="9 0.3 -1.2" rotation="0 -95 0"  ></a-entity>
+
+        <!-- portal DTOMEDICO RENTEGROSASISTENCIAS-->
+        <a-entity template="src:#portal" class="portales pantalla-dtomedico portalareintegrosasis" visible="false" data-src="#reintegrosasistencias" data-thumb="#portal-thumb" position="-9 0.3 1" rotation="0 90 0"  ></a-entity>
+        
+        <!-- portal RENTEGROSASISTENCIAS COMERCIAL-->
+        <a-entity template="src:#portal" class="portales pantalla-asistencias portaladtomedico" visible="false" data-src="#dtomedico" data-thumb="#portal-thumb" position="9 -0.3 -0.5" rotation="0 -95 0"  ></a-entity>
+
+        <!-- portal RENTEGROSASISTENCIAS RECEPCION-->
+        <a-entity template="src:#portal" class="portales pantalla-asistencias portalawelcome" visible="false" data-src="#welcome" data-thumb="#portal-thumb" position="-0.1 -0.3 -9" rotation="0 0 0" ></a-entity>
+
+        <!-- portal PISO11 LOBBY-->
+        <a-entity back-bg template="src:#portal" class="portales pantalla-piso11 portalalobby" visible="false" data-src="#lobby" data-thumb="#portal-thumb" position="-6.8 0.4 2" rotation="0 100 0" ></a-entity>
+
+        <!-- portal LOBBY IT2-->
+        <a-entity template="src:#portal" class="portales pantalla-lobby portalait2" visible="false" data-src="#it2" data-thumb="#portal-thumb" position="-9 -0.3 2" rotation="0 100 0"  ></a-entity>
+
+        <!-- portal LOBBY Piso10-->
+        <a-entity template="src:#portal" class="portales pantalla-lobby portalawelcome" visible="false" data-src="#welcome" data-thumb="#portal-thumb" position="3.2 1 6" rotation="0 0 0"  ></a-entity>
+
+        <!-- portal LOBBY RRHH-->
+        <a-entity template="src:#portal" class="portales pantalla-lobby portalarrhh" visible="false" data-src="#rrhh" data-thumb="#portal-thumb" position="9 -0.3 -1.2" rotation="0 -100 0"  ></a-entity>
+
+        <!-- portal RRHH LEGALES-->
+         <a-entity template="src:#portal" class="portales pantalla-rrhh portalalegales" visible="false" position="-1.6 0.3 -9" rotation="0 185 0" data-src="#legales" data-thumb="#portal-thumb"></a-entity>
+        
+        <!-- portal RRHH LOBBY-->
+         <a-entity template="src:#portal" class="portales pantalla-rrhh portalalobby" visible="false" position="9 0.4 -1.7" rotation="0 -90 0"   data-src="#lobby" data-thumb="#portal-thumb"></a-entity>
+       
+        <!-- portal LEGALES RRHH-->
+        <a-entity template="src:#portal" class="portales pantalla-legales portalarrhh" visible="false" position="-9 -0.35 0" rotation="0 90 0"  data-src="#rrhh" data-thumb="#portal-thumb"></a-entity>
+
+         <!-- portal LEGALES Pasillo Piso 11-->
+        <a-entity template="src:#portal" class="portales pantalla-legales portalapasillopiso11" visible="false" position="9 -0.35 0" rotation="0 -90 0" data-src="#pasillopiso11" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal PASILLOPISO11 - LEGALES-->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso11 portalalegales" visible="false" position="9 0.4 -1" rotation="0 -90 0"  data-src="#legales" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal PASILLOPISO11 - ADMINISTRACION-->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso11 portalaadmin" visible="false" position="-1.3 0.4 -9" rotation="0 0 0"  data-src="#administracion" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal ADMMINISTRACION PASILLOPISO11 -->
+        <a-entity template="src:#portal" class="portales pantalla-admin portalapasillopiso11" visible="false" position="9 -0.2 0" rotation="0 -90 0"   data-src="#pasillopiso11" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal ADMMINISTRACION PASILLOS A MARKETING -->
+        <a-entity template="src:#portal" class="portales pantalla-admin portalpasillopiso11-2" visible="false" position="-9  -0.2 0" rotation="0 90 0"   data-src="#pasillopiso11-2" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal PASILLOS A MARKETING a ADMINISTRACION -->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso11-2 portalaadmin" visible="false" position="9.5 0.5 0.3" rotation="0 -90 0" data-src="#administracion" data-thumb="#portal-thumb"></a-entity>
+
+         <!-- portal PASILLOS A MARKETING / Markting digital-->
+        <a-entity template="src:#portal" class="portales pantalla-pasillopiso11-2 portalamkt" visible="false" position="0.3 0.5 -9"   data-src="#marketing" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal MARKETING MKT DIGITAL -->
+        <a-entity template="src:#portal" class="portales pantalla-mkt portalpasillopiso11-2" visible="false" position="9 -0.3 -0.7" rotation="0 -90 0" data-src="#pasillopiso11-2" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal MARKETING IT2 -->
+        <a-entity template="src:#portal" class="portales pantalla-mkt portalait2" visible="false" position="-9 -0.4 0.5" rotation="0 90 0"   data-src="#it2" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal IT2 MARKETING-->
+        <a-entity template="src:#portal" class="portales pantalla-it2 portalamkt" visible="false" position="9 0.5 -1" rotation="0 -90 0"   data-src="#marketing" data-thumb="#portal-thumb"></a-entity>
+
+        <!-- portal IT2 LOBBY-->
+        <a-entity template="src:#portal" class="portales pantalla-it2 portalalobby" visible="false" position="-0.07 0.5 -9" rotation="0 0 0"   data-src="#lobby" data-thumb="#portal-thumb"></a-entity>
+      <!-- FIN PORTALES -->
+    </a-entity>
+      
+    <!--START  tile-->
+    <a-entity start-scene position="0 -0.2 -3" class="tile0" width="1" height=".5" visible="true" transparent="true" scale=".2 .2 .2" > 
+        <a-animation begin="go-up" attribute="position" to="0 50 -14" dur="1500"></a-animation>
+        <a-animation begin="go-up" attribute="opacity" from="1" to="0" dur="2500"></a-animation>
+          <a-image 
+          class="tile0"
+          id="start" 
+          position="-0.3 8.6 0" 
+          opacity="1"
+          src="#elem-start"
+          transparent="true"
+          width="13" height="2.9" 
+          scale="1.1 1.1 1.1"
+          ></a-image>
+        
+          <a-entity position="-0.3 0.2 0.2" >
+            <!--Bouncing item-->
+            <a-animation attribute="position" to="-0.3 -4 0.2" direction="alternate" dur="1900" repeat="indefinite"></a-animation>
+            <!--Bouncing item--> 
+            
+           <a-image 
+            class="tile0"
+            id="arrow" 
+            position="-0.3 6 0" 
+            opacity="1"
+            src="#elem-arrow"
+            transparent="true"
+            width="0.7" height="1" >
+            </a-image>
+
+          </a-entity>
+
+          <a-image clickable
+            class="tile0"
+             id="start-btn" 
+            position="-0.8 -1.7 0.2" 
+            opacity="1"
+            src="#elem-start-btn"
+            transparent="true"
+            width="10" height="4.5" 
+          
+          ></a-image>
+       
+    </a-entity>  
+     <!--START  tile-->
+
+    <!--TOOLTIPS y ELEMENTOS DE CADA SECTOR-->
+    <a-entity >
+         <!--TOOLTIP DE RECEPCION-->
+        <a-entity  tooltip position="0 1 -4" visible="false" class="portales pantalla-welcome">
+            <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+            <a-entity position="0.6 .02 .02" text="width: 2; lineHeight: 50; letterSpacing: 15; color: white; value:RECEPCION" ></a-entity>
+            <a-plane class="tooltip-content" position="0 -.25 0" width="1" height=".2"  opacity="0" visible="false" >
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true">
+              </a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-recepcion" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+        <!--FIN TOOLTIP DE RECEPCION-->
+        
+        <!--TOOLTIP TLMKT-->
+        <a-entity  tooltip position="1.7 1 2" rotation="0 -140 0" class="portales pantalla-telemarketing" visible="false">
+            <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+            <a-entity position="0.45 .02 .02" text="width: 2; lineHeight: 50; letterSpacing: 15; color: white; value:TELEMARKETING" ></a-entity>
+            <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-telemkt" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+
+         <!--TOOLTIP IT1-->
+        <a-entity  tooltip position="2.3 .7 1" rotation=".5 -111 0" class="portales pantalla-it1" visible="false">
+          <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width=".8"  height=".2" ></a-image>
+            <a-entity position=".57 0.012 .02" text="width: 1.5; lineHeight: 50; letterSpacing: 1.5; color: white; value:SECTOR IT" ></a-entity>
+
+          <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+            <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-it1" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+        <!--TOOLTIP COMERCIAL-->
+         <a-entity  tooltip position="2.3 1.2 1" rotation=".5 -120 0" class="portales pantalla-comercial" visible="false">
+         <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4" ></a-image>
+        <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SECTOR" ></a-text>
+        <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMERCIAL" ></a-text>
+
+         <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                  <a-image position="0 -0.7 0.01" opacity="1" src="#text-comercial" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+        <!--TOOLTIP DTO MEDICO-->
+        <a-entity  tooltip position="2.0 1.2 -2.3" rotation=".5 -40 0" class="portales pantalla-dtomedico" visible="false">
+         
+          <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4" ></a-image>
+          <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="DEPARTAMENTO" ></a-text>
+          <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="MEDICO" ></a-text>
+
+          <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                  <a-image position="0 -0.7 0.01" opacity="1" src="#text-dto-medico" width="1.5" height="1.5" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+         <!--TOOLTIP ASISTENCIAS / REINTEGROS-->
+        <a-entity tooltip position="-2.7 1 -1.3" rotation=".5 70 0" class="portales pantalla-asistencias" visible="false">
+          <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4" ></a-image>
+        <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ASISTENCIAS /" ></a-text>
+        <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="REINTEGROS" ></a-text>
+          <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-asist-reint" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+
+         <!--TOOLTIP LOBBY-->
+        <a-entity tooltip position="-1 .7 -2.8" rotation="0 10 0" class="portales pantalla-lobby" visible="false">
+          <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+           <a-entity position="0.6 0.01 .02" text="width: 2; lineHeight: 50; letterSpacing: 15; color: white; value:COWORKING" ></a-entity>
+           <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+              <a-image position="0 -0.7 0.01" opacity="1" src="#text-lobby" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+        <!--TOOLTIP RRHH-->
+        <a-entity tooltip position="-1 1 -2.8" rotation="0 30 0"  width="2" height=".45" class="portales pantalla-rrhh" visible="false">
+        <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4" ></a-image>
+        <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="RECURSOS" ></a-text>
+        <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="HUMANOS" ></a-text>
+           <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+               <a-image position="0 -0.7 0.01" opacity="1" src="#text-rrhh" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+        
+         <!--TOOLTIP RRHH DE -  LEGALES-->
+        <a-entity tooltip1 position="-2.5 1 -1.2" rotation="0 70 0" class="portales pantalla-legales" visible="false">
+          <a-image class="tooltip-btn1" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4" ></a-image>
+          <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="RECURSOS" ></a-text>
+        <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="HUMANOS" ></a-text>
+
+           <a-plane class="tooltip-content1" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+               <a-image position="0 -0.7 0.01" opacity="1" src="#text-rrhh" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+        <!--TOOLTIP LEGALES-->
+        <a-entity tooltip2 position="0 1 -2.8" rotation="0 10 0" class="portales pantalla-legales" visible="false">
+            <a-image class="tooltip-btn2" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+           <a-entity position="0.7 0.02 .02" text="width: 2; lineHeight: 50; letterSpacing: 15; color: white; value:LEGALES" ></a-entity>
+
+           <a-plane class="tooltip-content2" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+                <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+                      <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+                <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+               <a-image position="0 -0.7 0.01" opacity="1" src="#text-legales" width="1.6" height="1.6" transparent="true"></a-image>
+            </a-plane>
+        </a-entity>
+
+       
+
+        <!--TOOLTIP  PLANIFICACION COMERCIAL DE - LEGALES-->
+        <a-entity tooltip3 position="2 1 -1.9" rotation="0 -70 0" class="portales pantalla-legales" visible="false">
+          <a-image class="tooltip-btn3" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4" ></a-image>
+            <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PLANIFICACION" ></a-text>
+            <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMERCIAL" ></a-text>
+        
+
+           <a-plane class="tooltip-content3" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+              
+              <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+              <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+              <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+               <a-image position="0 -0.7 0.01" opacity="1" src="#text-planif-comercial" width="1.6" height="1.6" transparent="true"></a-image>
+          </a-plane>
+        </a-entity>
+
+       
+        <!--TOOLTIP PLANIF COMERCIAL-->
+        <a-entity  tooltip position="2 1 2.1" rotation="0 220 0" class="portales pantalla-pasillopiso11" visible="false">
+            <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.4"  height=".4"></a-image>
+            <a-text  width="1.8" position="0 0.08 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PLANIFICACION" ></a-text>
+            <a-text  width="1.8" position="0 -0.02 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMERCIAL" ></a-text>
+           <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+                
+                <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+                      <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+                <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+               <a-image position="0 -0.7 0.01" opacity="1" src="#text-planif-comercial" width="1.6" height="1.6" transparent="true"></a-image>
+            </a-plane>
+        </a-entity>
+
+        <!--TOOLTIP ADMINISTRACION-->
+        <a-entity tooltip position="2 1 -1" rotation="0 -40 0" class="portales pantalla-admin" visible="false">
+          <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+            <a-entity position="0.4 0.005 .02" text="width: 1.8; lineHeight: 50; letterSpacing: 15; color: white; value:ADMINISTRACION" ></a-entity>
+           <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+                <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+                      <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+                <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-administracion" width="1.6" height="1.6" transparent="true"></a-image>
+            </a-plane>
+        </a-entity>
+
+        <!--TOOLTIP MKT DIGITAL2-->
+        <a-entity tooltip position="-0.5 1 -3" rotation="0 0 0" class="portales pantalla-pasillopiso11-2" visible="false">
+            <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+            <a-entity position="0.6 0.005 .02" text="width: 2; lineHeight: 50; letterSpacing: 15; color: white; value:MARKETING" ></a-entity>
+            <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+                
+                <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+                      <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+                <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-mkt" width="1.6" height="1.6" transparent="true"></a-image>
+            </a-plane>
+        </a-entity>
+
+            <!--TOOLTIP MKT-->
+        <a-entity tooltip position=".4 1 2" rotation="0 180 0" class="portales pantalla-mkt" visible="false">
+            <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width="1.3"  height=".3" ></a-image>
+            <a-entity position="0.6 0.005 .02" text="width: 2; lineHeight: 50; letterSpacing: 15; color: white; value:MARKETING" ></a-entity>
+            <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+                
+                <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+                      <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="0" ></a-animation>
+                <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-mkt" width="1.6" height="1.6" transparent="true"></a-image>
+            </a-plane>
+        </a-entity>
+          
+        
+        <!--TOOLTIP DESARROLLO-->
+        <a-entity tooltip position="-1 .5 -2" rotation="0 30 0" class="portales pantalla-it2" visible="false">
+            <a-image class="tooltip-btn" position="0 0 0" opacity="1" src="#info-point" width=".8"  height=".2" ></a-image>
+            <a-entity position=".57 0.012 .02" text="width: 1.5; lineHeight: 50; letterSpacing: 1.5; color: white; value:SECTOR IT" ></a-entity>
+            <a-plane class="tooltip-content" position="0 -.3 0" width="1" height=".2"  opacity="0" visible="false" scale="0 0 0">
+                <a-animation begin="open-tooltip" attribute="scale" dur="1000" to="1.3 1.3 1.3"></a-animation>
+                      <a-animation begin="close-tooltip" attribute="scale" to="0 0 0" dur="2000" ></a-animation>
+                <a-image class="tooltip-bg" position="0 -0.4 0" opacity="1" src="#tooltip-bg" width="1.5" height=".9" transparent="true"></a-image>
+                <a-image position="0 -0.7 0.01" opacity="1" src="#text-it2" width="1.6" height="1.6" transparent="true"></a-image>
+            </a-plane>
+        </a-entity>
+
+    </a-entity>
+<!--FIN TOOLTIPS-->
+      
+<!--COMIENZA REFERENCIAS -->
+
+    <!--REFERENCIAS IT1-->
+      <a-entity position="9.1 .7 2.5" rotation="0 -90 0" width="1.2" height="1.2" class="references pantalla-it1"  visible="false" opacity="1" scale="1.2">
+        <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".7" ></a-image>
+        <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SEGURIDAD" ></a-text>
+        <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="INFORMATICA" ></a-text>
+      </a-entity>
+      <!--REFERENCIAS IT1-->
+      <a-entity position="7.3 .7 5" rotation=".5 -90 0" width="2" height=".65" class="references pantalla-it1"  visible="false" opacity="1" scale="1.2">
+        <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.5"  height=".6" ></a-image>
+        <a-text  width="3.3" position="0 0.015 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="TELECOMUNICACIONES" ></a-text>
+      </a-entity>
+       <!--REFERENCIAS IT1-->
+      <a-entity position=".7 .7 6" rotation="1 -170 0" width="1.3" height=".3" class="references pantalla-it1"  visible="false" opacity="1">
+        <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".5" ></a-image>
+        <a-text  width="3.3" position="0 0.015 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SERVICE DESK" ></a-text>
+      </a-entity>
+       <!--REFERENCIAS IT1-->
+      <a-entity position="7.5 .7 -3" rotation="0 -95 0" width="2.2" height=".45" class="references pantalla-it1"  visible="false" opacity="1">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.5"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.015 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="INFRAESTRUCTURA" ></a-text>
+      </a-entity>
+
+      <!--REFERENCIAS PASILLO PISO 10-->
+      <a-entity position="6.9 1.6 -3" rotation="0 -95 0" width="2" height=".45" class="references pantalla-pasillopiso10" visible="false" opacity="1">
+        <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.8"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.015 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SERVICIOS GENERALES" ></a-text>
+      </a-entity>
+      <!--REFERENCIAS PASILLO PISO 10-->
+      <a-entity position="-.1 1.6 5" rotation="0 180 -2" width="1.3" height=".4" class="references pantalla-pasillopiso10"  visible="false" opacity="1">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.015 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMEDOR" ></a-text>
+      </a-entity>
+
+
+      <!--REFERENCIAS GERENADMIIN-->
+      <a-entity position="-8.9 1.6 -1.5" rotation="0 100 0" width="1.3" height=".4" class="references pantalla-gerenadmin"  visible="false" opacity="1" scale="1 1 1">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.015 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="FINANZAS" ></a-text>
+      </a-entity>
+      
+
+      <!--REFERENCIAS GERENADMIN-->
+       <a-entity position="2.6 1.2 -2.3" rotation="0 -80 0" width="1.7" height=".45" class="references pantalla-gerenadmin" visible="false" opacity="1" scale=".5 .5 .5">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="GERENCIA" ></a-text>
+        <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ADMINISTRACION" ></a-text>
+      </a-entity>
+
+      <!--REFERENCIAS COMERCIAL-->
+       <a-entity position="2.6 0.2 1.2" rotation="0 -120 0" width="1.9" height=".45" class="references pantalla-comercial" visible="false" opacity="1" scale=".35 .35 .35">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CONTABILIDAD" ></a-text>
+        <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ARGENTINA" ></a-text>
+      </a-entity>
+      <!--REFERENCIAS COMERCIAL-->
+      <a-entity position="1.5 0.2 1.5" rotation="0 -140 0" width="1.7" height=".45" class="references pantalla-comercial" visible="false" opacity="1" scale=".3 .3 .3">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PLANIFICACION"></a-text>
+        <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMERCIAL"></a-text>
+      </a-entity>
+      <!--REFERENCIAS COMERCIAL-->
+      <a-entity position="0.3 0.2 1.5" rotation="0 -180 0" width="1.7" height=".45" class="references pantalla-comercial" visible="false" opacity="1" scale=".25 .25 .25">
+         <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+        <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="10" color="#fff" line-height="64" opacity="1" value="NEGOCIOS" ></a-text>
+        <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="10" color="#fff" line-height="64" opacity="1" value="CORPORATIVOS" ></a-text>
+      </a-entity>
+
+      <!--REFERENCIAS COMERCIAL-->
+        <a-entity position="-1.2 0.2 1.5" rotation="0 -210 0" width="1.7" height=".45" class="references pantalla-comercial" visible="false" opacity="1" scale=".25 .25 .25">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SECTOR" ></a-text>
+            <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="AGENCIAS" ></a-text>
+        </a-entity>
+
+       <!--REFERENCIAS COMERCIAL-->
+        <a-entity position="-1 0.2 -3"  rotation="2 40 0" width="1.7" height=".45" class="references pantalla-comercial" visible="false" opacity="1" scale=".35 .35 .35">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SECTOR" ></a-text>
+            <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CALIDAD" ></a-text>
+        </a-entity>
+      
+      
+        <!--REFERENCIAS DTO MEDICO-->
+        <a-entity position="3 0.2 .2" rotation="0 -90 0"   width="1.7" height=".45" class="references pantalla-dtomedico" visible="false" opacity="1" scale=".35 .35 .35">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SECTOR" ></a-text>
+            <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PRESTADORES" ></a-text>
+        </a-entity>
+
+         <!--REFERENCIAS DTO MEDICO-->
+        <a-entity position="2 0.2 1" rotation="0 -110 0"  width="1.7" height=".45" class="references pantalla-dtomedico" visible="false" opacity="1" scale=".35 .35 .35">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="AUDITORIA" ></a-text>
+            <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="MEDICA" ></a-text>
+        </a-entity>
+
+        <!--REFERENCIAS DTO MEDICO-->
+        <a-entity position="1 0.2 1.4" rotation="0 -110 0"  width="1.7" height=".45" class="references pantalla-dtomedico" visible="false" opacity="1" scale=".25 .25 .25">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="OPERATION" ></a-text>
+            <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PARTNERS" ></a-text>
+        </a-entity>
+        
+        <!--REFERENCIAS DTO MEDICO-->
+        <a-entity position="-0.7 0.2 2" rotation="-0.2 -189 0"  width="1.7" height=".45" class="references pantalla-dtomedico" visible="false" opacity="1" scale=".25 .25 .25">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="BI COMMAND" ></a-text>
+            <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CENTER" ></a-text>
+        </a-entity>
+
+        <!--REFERENCIAS RRHH Federico Tarling - CSO Global ASSIST CARD-->
+        <a-entity position="-9 2 -.7" rotation="0.2 100 0"  width="1.1" height="1" class="references pantalla-dtomedico" visible="false" opacity="1" scale="1.4 1.4 1.4">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#cso" width="1.9"  height="1" ></a-image>
+        </a-entity>
+
+        <!-- REFERENCIAS Asistencias Reintegros -->
+        <a-entity position="0.78 0.3 2" rotation="-0.2 -180 0"  width="1.7" height=".45" class="references pantalla-asistencias" visible="false" opacity="1" scale=".25 .25 .25">
+          <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+          <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="BI COMMAND" ></a-text>
+          <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CENTER" ></a-text>
+        </a-entity>
+
+        <!--REFERENCIAS LOBBY PASILLO A RRHH-->
+        <a-entity position="2.3 0.5 -0.8" rotation="0 -90 0"  width="1.4" height=".45" class="references pantalla-lobby" visible="false" opacity="1" scale=".3 .3 .3">
+          <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+          <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="SALAS DE" ></a-text>
+          <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="REUNION" ></a-text>
+        </a-entity>
+
+    
+        <!--REFERENCIAS RRHH-->
+        <a-entity position="-2 0.2 -1.53" rotation="0 20 0"  width="1.4" height=".45" class="references pantalla-rrhh" visible="false" opacity="1" scale=".3 .3 .3">
+            <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+            <a-text  width="3.6" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="AUDITORIA" ></a-text>
+        </a-entity>
+
+       
+
+        <!--REFERENCIAS LEGALES-->
+
+        <!--REFERENCIAS LEGALES RRHH-->
+        
+
+            <!--COO padron-->
+            <a-entity position="-2.3 1 1.5" rotation="0 -260 0"  width="1.4" height="1" class="references pantalla-pasillopiso11" visible="false" opacity="1" scale=".6 .6 .6">
+                <a-image  position="0 0 0" opacity="1" src="#coo" width="2.3"  height="1" ></a-image>
+            </a-entity>
+
+            <!--CLO stefagni-->
+            <a-entity position="-2.2 1 -5.5"   width="1.4" height="1" class="references pantalla-pasillopiso11" visible="false" opacity="1" scale=".8 .8 .8">
+                <a-image  position="0 0 0" opacity="1" src="#clo" width="2"  height="1" ></a-image>
+            </a-entity>
+
+            
+
+           
+            <!--REFERENCIAS  ADMINISTRACION-->
+            <a-entity position="2 0.2 -3" rotation="0 -70 0"  width="1.2" height=".45" class="references pantalla-admin" visible="false" opacity="1" scale=".4 .4 .4">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CONTABILIDAD" ></a-text>
+            </a-entity>
+
+            <!--REFERENCIAS ADMINISTRACION-->
+            <a-entity position="3 0.2 -2" rotation="0 -70 0"  width="1.4" height=".45" class="references pantalla-admin" visible="false" opacity="1" scale=".37 .37 .37">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMPRAS" ></a-text>
+            </a-entity>
+
+            <!--REFERENCIAS ADMINISTRACION-->
+            <a-entity position="4 0.2 -1" rotation="0 -70 0"  width="1.4" height=".45" class="references pantalla-admin" visible="false" opacity="1" scale=".4 .4 .4">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CUENTAS A" > </a-text>
+              <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PAGAR" ></a-text>
+            </a-entity>
+
+            <!--REFERENCIAS ADMINISTRACION-->
+            <a-entity position="2.5 0.2 1.63" rotation="0 -110 0"  width="1.4" height=".45" class="references pantalla-admin" visible="false" opacity="1" scale=".38 .38 .38">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+               <a-text  width="3.6" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PLANNING" ></a-text>
+            </a-entity>
+
+            <!--CFO-->
+                <a-entity position="7 1 0" rotation="0 -90 0"  width="1.4" height="1" class="references pantalla-admin" visible="false" opacity="1" scale=".8 .8 .8">
+                <a-image  position="0 0 0" opacity="1" src="#cfo" width="2.3"  height="1" ></a-image>
+             </a-entity>
+
+            <!--REFERENCIAS ADMINISTRACION-->
+            <a-entity position="-2.4 0.2 -1.8" rotation="0 90 0"  width="1.4" height=".45" class="references pantalla-admin" visible="false" opacity="1" scale=".4 .4 .4">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="BUSINESS" ></a-text>
+              <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="INTELLIGENCE" ></a-text>
+            </a-entity>
+            
+            <a-entity position="-6.4 0.2 -1.8" rotation="0 90 0"  width="1.4" height=".45" class="references pantalla-admin" visible="false" opacity="1" scale=".6 .6 .6">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ASISTENTES" ></a-text>
+              <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="EJECUTIVAS" ></a-text>
+            </a-entity>
+
+
+            <!--REFERENCIAS MKT DIGiITAL-->
+            <a-entity position="8 0.2 -1" rotation="0 -90 0"  width="1.4" height=".45" class="references pantalla-pasillopiso11-2" visible="false" opacity="1" scale=".8 .8 .8">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ASISTENTES" ></a-text>
+              <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="EJECUTIVAS" ></a-text>
+            </a-entity>
+
+             <!--REFERENCIAS RRHH CEO-->
+            <a-entity position="2 .8 0.2" rotation="0 -90 -2"  width="1" height=".45" class="references pantalla-pasillopiso11-2" visible="false" opacity="1" scale=".7 .7 .7">
+                <a-image class="info-sector" position="0 0 0" opacity="1" src="#ceo" width="1.7"  height=".9" ></a-image>
+            </a-entity>
+
+            <!--REFERENCIAS MKT DIGITAL-->
+            <a-entity position="-2.2 0.2 -1.3" rotation="0 70 0" width="1.4" height=".45" class="references pantalla-pasillopiso11-2" visible="false" opacity="1" scale=".38 .38 .38">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="MARKETING" ></a-text>
+              <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="DIGITAL" ></a-text>
+            </a-entity>
+
+            <!--REFERENCIAS MKT DIGITAL-->
+            <a-entity position="-1.8 0.2 -2.5" rotation="0 60 0" width="1.4" height=".45" class="references pantalla-pasillopiso11-2" visible="false" opacity="1" scale=".38 .38 .38">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6"  position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMUNICACION" ></a-text>
+            </a-entity>
+
+            <!--REFERENCIAS MKT-->
+            <a-entity position="3 0.2 1.95" rotation="0 -120 0"  width="1.4" height=".45" class="references pantalla-mkt" visible="false" opacity="1" scale=".45 .45 .45">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6"  position="0 0 .02"  align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="COMUNICACION" ></a-text>
+            </a-entity>
+
+             <!--REFERENCIAS MKT-->
+            <a-entity position="-1.9 0.2 1.95" rotation="0 120 0"  width="1.4" height=".45" class="references pantalla-mkt" visible="false" opacity="1" scale=".45 .45 .45">
+               <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2"  height=".6" ></a-image>
+              <a-text  width="3.6"  position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="PRODUCTO" ></a-text>
+            </a-entity>
+
+
+           <!--REFERENCIAS IT2-->
+           <a-entity position="-5.7 1 -4" rotation="0 75 0" scale="1 1 1">
+                <a-entity position="0 0 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                    <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                    <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="GEMS"></a-text> 
+                </a-entity>
+                 <!--REFERENCIAS IT2-->
+                <a-entity position="0 -.5 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                    <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                    <a-text  width="3.6" position="0 0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CORPORATE" ></a-text>
+                    <a-text  width="3.6" position="0 -0.1 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="APPLICATIONS" ></a-text>
+                </a-entity>
+            </a-entity>
+            
+
+           
+
+            <!--REFERENCIAS IT2-->
+             <a-entity position="-5.3 1 -.5" rotation="0 100 0">
+                <a-entity position="0 0 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                    <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                    <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="QA" ></a-text> 
+                </a-entity>
+                 <!--REFERENCIAS IT2-->
+                 <a-entity position="0 -.5 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                   <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                  <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="UX-UI DESIGN" ></a-text> 
+                </a-entity>
+              <!--REFERENCIAS IT2-->
+                 <a-entity position="0 -1 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                   <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                  <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="MOBILE" ></a-text> 
+                </a-entity>
+            </a-entity>
+
+
+            <!--REFERENCIAS IT2-->
+            <a-entity position="-5.3 1 3" rotation="0 110 0">
+                <a-entity position="0 0 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                   <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                  <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ACCOM" ></a-text> 
+                </a-entity>
+                    <!--REFERENCIAS IT2-->
+                 <a-entity position="0 -.5 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                   <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                   <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="ACNET" ></a-text> 
+                </a-entity>
+                    <!--REFERENCIAS IT2-->
+                 <a-entity position="0 -1 0" rotation="0 0 0" width=".45" height=".45" class="references pantalla-it2" visible="false" opacity="1" scale=".7 .7 .7">
+                   <a-image class="info-sector" position="0 0 0" opacity="1" src="#info-sector" width="2.3"  height=".6" ></a-image>
+                  <a-text width="3.2" position="0 0 .02" align="center" letter-spacing="8" color="#fff" line-height="64" opacity="1" value="CRM" ></a-text> 
+                </a-entity>
+            </a-entity>
+            <!--FERNANDO BRODER-->
+            <a-entity position="5.9 1.3 -.8" rotation="0 270 0"  width="1.4" height=".65" class="references pantalla-it2" visible="false" opacity="1" scale=".9 .9 .9">
+                <a-image  position="0 0 0" opacity="1" src="#cio" width="2.3"  height="1" ></a-image>
+            </a-entity>
+    <!--FIN REFERENCIAS-->
+
+
+  <!-- IMAGEN DE FONDO QUE VA CAMBIANDO CON EL CAMBIO DE ESCENA -->  
+  <a-entity position="0 0 0" >  
+     <a-sky id="image-a" radius="10" src="#startbg" position="0 0 0" rotation="0 275 0" color="#101010" ></a-sky>
+
+  </a-entity>
+     <!--NUEVO CURSOR-->
+        <a-entity >
+            <a-entity
+              id="main-camera"
+              camera
+              look-controls
+              rotation="0 0 0"
+              wasd-controls
+              raycaster="objects:[clickable]"
+               >
+              <!-- MAIN CURSOR -->
+              <a-image
+                cursor="fuse: true;"
+                alpha-test="0.5"
+                id="main-cursor"
+                class="tile"
+                position="0 -0.03 -2"
+                opacity="0"
+                src="#cursor-hover"
+                transparent="true"
+                width="0.08" height="0.13"
+                raycaster="objects:[clickable]" >
+
+                <a-animation 
+                begin="cursor-fusing" 
+                attribute="opacity" 
+                fill="forwards" 
+                from="0" to="1" easing="ease-in">
+                </a-animation>
+
+                <a-animation begin="mouseleave" 
+                attribute="opacity" 
+                fill="backwards" 
+                from="1" to="0" dur="0">
+                </a-animation>
+              </a-image>
+
+              
+              <a-image  
+                cursor="fuse: true;"
+                alpha-test="0.5"
+                id="cursor-loader"
+                class="tile"
+                position="0 -0.03 -1.999" 
+                opacity="1"
+                src="#cursor"
+                transparent="true"
+                width="0.08" height="0.13" 
+                raycaster="objects:[clickable]">
+
+                <a-animation 
+                begin="cursor-fusing" 
+                attribute="opacity" 
+                fill="forwards" 
+                from="1" to="0" easing="ease-in">
+                </a-animation>
+
+                <a-animation begin="mouseleave" 
+                attribute="opacity" 
+                from="0" to="1" dur="0">
+                </a-animation>
+              </a-image>
+            </a-entity>
+        </a-entity>
+          <!--NUEVO CURSOR-->
+    </a-scene>
+  
+  </body>
+</html>
